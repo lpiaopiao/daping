@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://10.24.60.118:8083/screen/screenController/toScreen.action -->
+<html>
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta http-equiv="refresh" content="3600">
+        <title>云南玉溪大屏</title>
+        <link rel="stylesheet" type="text/css" href="./assets/liMarquee.css">
+        <link rel="stylesheet" type="text/css" href="./assets/swiper.min.css">
+        <link rel="stylesheet" type="text/css" href="./assets/main.css">
+        <link rel="stylesheet" type="text/css" href="./assets/screen.css">
+        <script type="text/javascript" src="./assets/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="./assets/jquery.liMarquee.js"></script>
+        <script type="text/javascript" src="./assets/swiper.min.js"></script>
+        <script type="text/javascript" src="./assets/echarts.js"></script>
+        <script type="text/javascript" src="./assets/screen.js"></script>
+        <script type="text/javascript" src="./assets/screenJS.js"></script>
+        <script type="text/javascript" src="./assets/circleOption.js"></script>
+        <script type="text/javascript" src="./assets/sjzMap.js"></script>
+        <!-- <script type="text/javascript" src="js/hebei.js"></script> -->
+        <script>
+                var ctx = '/screen';
+        </script>
+        <style>
+                .numfaceNum2 {
+                        font-size: 1.6rem !important;
+                        color: #0b90f4 !important;
+                        width: 30%;
+                        text-overflow: ellipsis;
+                        margin-left: -5% !important;
+                }
+
+                .sjgj-list1 {
+                        margin-left: 28px;
+                        margin-top: 30px;
+                        margin: 5% 0 0 3%;
+                        margin: 1.79vh 0 0 1vh;
+                }
+
+                .sjgj-list1 ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                }
+
+                .sjgj-list1 ul li {
+                        color: #0b90f4;
+                        list-style: square;
+                        margin-left: 36px;
+                        width: 180px;
+                        /* margin-right: 10px; */
+
+                        width: 41%;
+                        margin-left: 11%;
+                        white-space: nowrap;
+                        overflow: inherit;
+                }
+
+                .li1 {
+                        color: #0b90f4;
+                        list-style: square;
+                        margin-left: 36px;
+                        width: 180px;
+                        /* margin-right: 10px; */
+                        width: 41%;
+                        margin-left: 6% !important;
+                        white-space: nowrap;
+                        overflow: inherit;
+                }
+
+                .li2 {
+                        color: #0b90f4;
+                        list-style: square;
+                        margin-left: 36px;
+                        width: 180px;
+                        /* margin-right: 10px; */
+                        margin-left: -8px;
+                        width: 41%;
+                        margin-left: 7% !important;
+                        white-space: nowrap;
+                        overflow: inherit;
+                }
+
+                .sjgj-list1 ul li span:first-child {
+                        color: #bcc1dd;
+                        font-size: 14px;
+                        font-size: 0.8rem;
+                        display: inline-block;
+                        /* width: 90px; */
+                        /* width: 71px; */
+                }
+
+                .sjgj-list1 ul li span:last-child {
+                        font-size: 30px;
+                        margin-left: 14px;
+                        font-size: 1.8rem;
+                        margin-left: 8%;
+                }
+
+                .sjgj-list1 ul li span:last-child b {
+                        font-size: 14px;
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                }
+        </style>
+</head>
+
+<body>
+        <div class="screen-container">
+                <div class="dashboard-container flexDom">
+                        <div class="screen-left">
+                                <img class="corner1" src="./assets/images/conner1.png" />
+
+                                <div class="border-panel" style="height:23vh;">
+                                        <div class="panel-title">
+                                                <div class="title-left">
+                                                        <i class="sjzl"></i> <span class="active">数据总览</span>
+                                                </div>
+                                        </div>
+                                        <div class="sjgj-num cGreen">
+                                                <span>归集数据</span>
+                                                <div class="num-flip">
+                                                        <ul class="ft30 numface box-items" id="TNum">
+                                                                <li class="number-item"><span><i>9876543210</i></span>
+                                                                </li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                        <div class="sjgj-list1">
+                                                <ul>
+                                                        <li class="li1">
+                                                                <span style="margin-left:-8px;">法人数据</span>
+                                                                <span class="numface" id="frsj">10.12 </span>
+                                                        </li>
+                                                        <li class="li2">
+                                                                <span style="margin-left:-8px;">自然人数据</span>
+                                                                <span class="numface" id="zrrsj">20 </span>
+                                                        </li>
+                                                        <li class="li1">
+                                                                <span style="margin-left:-8px;">法人主体</span>
+                                                                <span class="numface" id="frzt">180 </span>
+                                                        </li>
+
+                                                        <li class="li2">
+                                                                <span style="margin-left:-8px;">自然人主体</span>
+                                                                <span class="numface" id="zrrzt">3 </span>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                </div>
+
+
+
+                                <div class="border-panel" style="height: 26.2vh;">
+                                        <div class="panel-title">
+                                                <div class="title-left">
+                                                        <i class="sjgj"></i> <span class="active">市直部门数据归集</span>
+                                                </div>
+                                        </div>
+                                        <div class="mess-list1">
+                                                <ul id="drag1" class="drag1">
+                                                        <li>
+                                                                <span class="li-sp1">1</span>
+                                                                <span class="li-sp2">玉溪信用建设平台 </span><span class="range"
+                                                                        style="width:20%"></span>
+                                                                <span class="li-sp3"></span>20
+                                                        </li>
+                                                        <li>
+                                                                <span class="li-sp1">2</span>
+                                                                <span class="li-sp2">易门县信用建设平台 </span><span class="range"
+                                                                        style="width:10%"></span>
+                                                                <span class="li-sp3"></span>30
+                                                        </li>
+                                                        <li>
+                                                                <span class="li-sp1">3</span>
+                                                                <span class="li-sp2">澄江县信用建设平台--4 </span><span class="range"
+                                                                        style="width:10%"></span>
+                                                                <span class="li-sp3"></span>70
+                                                        </li>
+                                                        <li>
+                                                                <span class="li-sp1">5</span>
+                                                                <span class="li-sp2">红塔信用建设平台 </span><span class="range"
+                                                                        style="width:5%"></span>
+                                                                <span class="li-sp3"></span>20
+                                                        </li>
+                                                </ul>
+                                                <ul class="drag1-2"></ul>
+                                        </div>
+                                </div>
+
+                                <div class="border-panel" style="height: 26vh;">
+                                        <div class="panel-title">
+                                                <div class="title-left">
+                                                        <i class="wzyyph"></i> <span class="active">县（市、区）数据归集</span>
+                                                </div>
+
+                                        </div>
+                                        <div class="mess-list">
+                                                <ul id="drag" class="drag">
+                                                        <li>
+                                                                <span class="li-sp1">1</span>
+                                                                <span class="li-sp2">红塔信用建设平台 </span><span class="range"
+                                                                        style="width:10%"></span>
+                                                                <span class="li-sp3"></span>0
+                                                        </li>
+                                                        <li>
+                                                                <span class="li-sp1">2</span>
+                                                                <span class="li-sp2">江川信用建设平台 </span><span class="range"
+                                                                        style="width:5%"></span>
+                                                                <span class="li-sp3"></span>70
+                                                        </li>
+                                                        <li>
+                                                                <span class="li-sp1">3</span>
+                                                                <span class="li-sp2">易门信用建设平台 </span><span class="range"
+                                                                        style="width:20%"></span>
+                                                                <span class="li-sp3"></span>80
+                                                        </li>
+                                                        <li>
+                                                                <span class="li-sp1">4</span>
+                                                                <span class="li-sp2">澄江信用建设平台 </span><span class="range"
+                                                                        style="width:4%"></span>
+                                                                <span class="li-sp3"></span>40
+                                                        </li>
+                                                </ul>
+                                                <ul class="drag2"></ul>
+                                        </div>
+                                </div>
+
+                                <div class="border-panel flexlc" style="height:17vh; position: relative;">
+                                        <img class="corner3" src="./assets/images/corner3.png" />
+                                        <div class="panel-title">
+                                                <div class="title-left">
+                                                        <i class="ywbl"></i> <span class="active">业务办理</span>
+                                                </div>
+                                        </div>
+
+                                        <div class="xsxm-list">
+                                                <div class="xsxm-item mgR15">
+
+                                                        <p class="xsxm-city">信用修复</p>
+                                                        <div class="xsxm-data blue">
+                                                                <p class="cWhite numface" id="xyxfData">19,911,007</p>
+                                                                <p class="xsxm-date" id="xyxfTime">2020/02/03</p>
+                                                        </div>
+                                                </div>
+                                                <div class="xsxm-item">
+                                                        <span></span>
+                                                        <p class="xsxm-city">信用核查</p>
+                                                        <div class="xsxm-data green">
+                                                                <p class="cWhite numface" id="xyhcData">19,911,007</p>
+                                                                <p class="xsxm-date" id="xyhcTime">2020/02/03</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                        </div>
+
+                        <div class="screen-center">
+                                <div class="center-top">
+                                        <div class="top-title">
+                                                <div id="TIMECLOCK" class="title-time"></div>
+                                        </div>
+                                        <div class="top-desc">
+                                                <div class="desc-item tar">
+                                                        <span>参建部门</span>
+                                                        <span class="numface cBlue" id="cjdeptid">20</span>
+                                                </div>
+                                                <div class="desc-item">
+                                                        <span>归集目录</span>
+                                                        <span class="numface cBlue" id="cjgjmlid">20</span>
+                                                </div>
+                                                <div class="desc-item tal">
+                                                        <span>参建区县</span>
+                                                        <span class="numface cBlue" id="cjqxdeptid">20</span>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="center-map">
+                                        <!-- <div class="map-scope"> -->
+                                        <!-- <span id="CHARTMAPNATIONAL" class="cBlue">地图范围：全国</span> &nbsp; -->
+                                        <!-- <span id="CHARTMAPCITY" class="cBlue"></span>
+                        </div> -->
+                                        <!-- <div id="CHINACHARTMAP" class="map-chart show"></div> -->
+                                        <div id="CHINACHARTMAP" class="map-chart show"></div>
+                                        <div id="sjzEcharts" class="map-chart"></div>
+                                        <!-- <div id="CITYCHARTMAP" class="map-chart city"></div> -->
+                                </div>
+                                <div class="center-list" style="height: 10%;">
+                                        <div class="panel-title" style="height: 20%;">
+                                                <div class="title-left">
+                                                        <i class="sjfzggwyh" style="margin:0;"></i> <span
+                                                                class="active mapTitle">市发展和改革委员会</span>
+                                                </div>
+                                        </div>
+                                        <div class="center-lists" id="echartsDatas">
+                                                <div style="height: 54px">
+                                                        <span class="numface listNum">6</span>
+                                                        <span class="numText">归档目录</span>
+                                                </div>
+                                                <div style="height: 54px">
+                                                        <span class="numface listNum red">3323</span>
+                                                        <span class="numText">上报量</span>
+                                                </div>
+                                                <div style="height: 54px">
+                                                        <span class="numface listNum blue">3323</span>
+                                                        <span class="numText">入库量</span>
+                                                </div>
+                                                <div style="height: 54px">
+                                                        <span class="numface listNum yellow">1007</span>
+                                                        <span class="numText">双公示上报量</span>
+                                                </div>
+                                                <div style="height: 54px">
+                                                        <span class="numface listNum purple">1991</span>
+                                                        <span class="numText">双公示入库量</span>
+                                                </div>
+
+                                        </div>
+
+                                </div>
+                                <script>
+                                        var timeIndex = 0;
+                                        var timeInterval = setInterval(function () {
+                                                var timeCount = $('#TIMELINE li').length;
+                                                if (timeIndex <= timeCount) {
+                                                        $('#TIMELINE li:nth-child(' + timeIndex + ')')
+                                                                .addClass('active').siblings()
+                                                                .removeClass('active')
+                                                } else {
+                                                        timeIndex = 0;
+                                                }
+                                                timeIndex++
+                                        }, 1000)
+                                        $('#TIMELINE li').click(function () {
+                                                clearInterval(timeInterval)
+                                                timeIndex = $(this).index();
+                                                $(this).addClass('active').siblings().removeClass(
+                                                        'active');
+                                                timeInterval = setInterval(function () {
+                                                        var timeCount = $(
+                                                                        '#TIMELINE li')
+                                                                .length;
+                                                        timeIndex++
+                                                        if (timeIndex <= timeCount) {
+                                                                $('#TIMELINE li:nth-child(' +
+                                                                                timeIndex +
+                                                                                ')')
+                                                                        .addClass(
+                                                                                'active'
+                                                                                )
+                                                                        .siblings()
+                                                                        .removeClass(
+                                                                                'active'
+                                                                                )
+                                                        } else {
+                                                                timeIndex = 0;
+                                                        }
+                                                }, 1000)
+                                        });
+                                </script>
+                        </div>
+
+                        <div class="screen-right">
+
+                                <div class="border-panel screen-right-top" style="height: 24.5vh;">
+                                        <div class="right-top">
+                                                <ul>
+                                                        <li>
+                                                                <span id="frxzxk">86</span>
+                                                        </li>
+                                                        <li>法人行政许可</li>
+                                                </ul>
+                                                <ul>
+                                                        <li>
+                                                                <span id="zrrxzxk">86</span>
+                                                        </li>
+                                                        <li>自然人行政许可</li>
+                                                </ul>
+                                        </div>
+                                        <div class="position-">
+                                                <div class="position-center">
+                                                        <ul>
+                                                                <li>
+                                                                        <span id="sgs">8888</span>
+                                                                </li>
+                                                                <li>双公示</li>
+                                                        </ul>
+
+                                                </div>
+
+                                        </div>
+                                        <div class="right-top" style="margin-top: 1.5vh;">
+                                                <ul>
+                                                        <li>
+                                                                <span id="frxzcf">206</span>
+                                                        </li>
+                                                        <li>法人行政处罚</li>
+                                                </ul>
+                                                <ul>
+                                                        <li>
+                                                                <span id="zrrxzcf">106万</span>
+                                                        </li>
+                                                        <li>自然人行政处罚</li>
+                                                </ul>
+                                        </div>
+
+                                </div>
+                                <div class="border-panel" style="height:31vh;">
+                                        <div class="panel-title">
+                                                <div class="title-left">
+                                                        <i class="lhjc"></i> <span class="active">联合奖惩</span>
+                                                </div>
+                                        </div>
+                                        <div class="sgs-list">
+                                                <div class="sgs-item ">
+                                                        <h3 class="sgs-title ">惩戒对象</h3>
+                                                        <h3 class="sgs-title">激励对象</h3>
+                                                </div>
+                                                <div class="line-msg">
+                                                        <span class="sgs-num numface cGreen2"
+                                                                id="allCjdx">1,836,295,472</span>
+                                                        <div class="sgs-data sgs-data1" id="cjdx"> </div>
+                                                </div>
+                                                <div class="line-msg">
+                                                        <span class="sgs-num numface cRed2"
+                                                                id="allJldx">1,564.158</span>
+                                                        <div class="sgs-data sgs-data2" id="jldx"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="border-panel" style="height:14.5vh;position: relative">
+                                        <img class="corner4" src="./assets/images/corner4.png" />
+                                        <div class="panel-title">
+                                                <div id="XMDBTAB" class="title-left line">
+                                                        <i class="xyhm"></i>
+                                                        <span class="active">信用惠民</span>
+                                                </div>
+
+                                        </div>
+
+                                        <div class="right1-bottom">
+                                                <div>
+                                                        <div>
+                                                                <span>法人守信激励评价</span>
+                                                                <span id="jlpjData">8,168,756,365</span>
+                                                        </div>
+                                                </div>
+
+                                                <div class="">
+                                                        <div class="">
+                                                                <span>诚信商户</span>
+                                                                <span id="cxshData">365,025</span>
+                                                        </div>
+
+                                                </div>
+
+
+                                                <div>
+                                                        <div>
+                                                                <span>惠利对象</span>
+                                                                <span id="hldxData">8,168,756,365</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                                <div class="border-panel" style="height:23vh;">
+                                        <div class="panel-title" style="position: relative">
+                                                <img class="corner2" src="./assets/images/corner2.png" />
+                                                <div class="title-left">
+                                                        <i class="xycn"></i> <span class="active">信用承诺</span>
+                                                </div>
+
+                                        </div>
+                                        <div id="XYCN" class="chart-panel line" style="width: 100%;height: 20.8vh;">
+                                        </div>
+                                        <script>
+                                                showAuto();
+                                                // // 每隔60秒重新发送请求获取数据
+                                                // setInterval("showAuto();", 60000);
+                                                function showAuto() {
+                                                        $.get("${pageContext.request.contextPath}/xycn/queryXycnPieChart.action",
+                                                                function (data) {
+                                                                        if (data) {
+                                                                                var chartData = [];
+                                                                                for (var i = 0; i < data
+                                                                                        .length; i++) {
+                                                                                        // if (data[i].CN_TYPE == '其他') {
+                                                                                        //     continue;
+                                                                                        // }
+                                                                                        chartData.push({
+                                                                                                value: data[
+                                                                                                                i]
+                                                                                                        .CN_CNT,
+                                                                                                name: data[
+                                                                                                                i]
+                                                                                                        .CN_TYPE
+                                                                                        });
+                                                                                }
+
+                                                                                // var chartXYCN = echarts.init(document.getElementById("XYCN"));
+
+                                                                                var colorData = [
+                                                                                        '#0e80ab',
+                                                                                        '#55cdfc',
+                                                                                        '#4765b6',
+                                                                                        '#d7c969 ',
+                                                                                        '#c53869',
+                                                                                        '#9399ac'
+                                                                                ];
+                                                                                refreshData(colorData,
+                                                                                        chartData)
+
+                                                                                // var optionOne = setOptionCircle(chartData, colorData);
+                                                                                // chartXYCN.setOption(optionOne);
+                                                                        }
+                                                                }, "json");
+                                                }
+                                        </script>
+                                </div>
+                        </div>
+
+                        <!-- <div class="screen-right2">
+                                <div class="border-panel" style="height:25vh;">
+                                        <div class="panel-title" style="position: relative">
+                                                <img class="corner2" src="./assets/images/corner2.png" />
+                                                <div class="title-left">
+                                                        <i class="xycn"></i> <span class="active">信用承诺</span>
+                                                </div>
+
+                                        </div>
+                                        <div id="XYCN" class="chart-panel line" style="width: 100%;height: 20.8vh;">
+                                        </div>
+                                        <script>
+                                                showAuto();
+                                                // // 每隔60秒重新发送请求获取数据
+                                                // setInterval("showAuto();", 60000);
+                                                function showAuto() {
+                                                        $.get("${pageContext.request.contextPath}/xycn/queryXycnPieChart.action",
+                                                                function (data) {
+                                                                        if (data) {
+                                                                                var chartData = [];
+                                                                                for (var i = 0; i < data
+                                                                                        .length; i++) {
+                                                                                        // if (data[i].CN_TYPE == '其他') {
+                                                                                        //     continue;
+                                                                                        // }
+                                                                                        chartData.push({
+                                                                                                value: data[
+                                                                                                                i]
+                                                                                                        .CN_CNT,
+                                                                                                name: data[
+                                                                                                                i]
+                                                                                                        .CN_TYPE
+                                                                                        });
+                                                                                }
+
+                                                                                // var chartXYCN = echarts.init(document.getElementById("XYCN"));
+
+                                                                                var colorData = [
+                                                                                        '#0e80ab',
+                                                                                        '#55cdfc',
+                                                                                        '#4765b6',
+                                                                                        '#d7c969 ',
+                                                                                        '#c53869',
+                                                                                        '#9399ac'
+                                                                                ];
+                                                                                refreshData(colorData,
+                                                                                        chartData)
+
+                                                                                // var optionOne = setOptionCircle(chartData, colorData);
+                                                                                // chartXYCN.setOption(optionOne);
+                                                                        }
+                                                                }, "json");
+                                                }
+                                        </script>
+                                </div>
+                                <div class="border-panel" style="height:17vh;">
+                                        <div class="panel-title bg-panel-title">
+                                                <div class="title-left right2-title-left">
+                                                        <i class="csxyjc"></i> <span class="active">城市信用监测</span>
+                                                </div>
+                                        </div>
+                                        <div class="right2-cxxyjc">
+                                                <div>
+                                                        在全国城市信用监测36个省会及以上城市（TOP20）中，
+                                                        石家庄当前排名为 <span id="csxyjc">18 (87分)</span>
+                                                </div>
+
+                                        </div>
+                                </div>
+                                <div class="border-panel" style="height:51vh;">
+                                        <div class="panel-title bg-panel-title">
+                                                <div id="XMDBTAB" class="title-left right2-title-left">
+                                                        <i class="qxxypm"></i>
+                                                        <span class="active">区县信用排名</span>
+                                                </div>
+                                                <div class="right2-titile">
+                                                        <p id="time"></p>
+                                                </div>
+                                        </div>
+                                        <div id="XMYYDBTABCOM" class="table-panel active xmyydb">
+                                                <ul class="table-body">
+                                                        <div class="bottom-list-left" id="qxxypmleft"></div>
+                                                        <div class="bottom-list-right" id="qxxypmright"></div>
+                                                </ul>
+                                        </div>
+                                        <div class="panel-download"></div>
+                                </div>
+                        </div> -->
+                </div>
+        </div>
+</body>
+
+</html>
